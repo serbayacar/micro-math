@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  plus:
+    image: micro-plus
+    ports:
+      - "8080:3000"
+  minus:
+    image: micro-minus
+    ports:
+      - "8081:3000"
+  multiplication:
+    image: micro-multiplication
+    ports:
+      - "8082:3000"
+  divide:
+    image: micro-divide
+    ports:
+      - "8083:3000"
