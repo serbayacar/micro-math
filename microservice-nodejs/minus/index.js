@@ -1,6 +1,5 @@
 const express = require('express');
 const { LoggerMiddleware } = require('./middleware/LoggerMiddleware');
-const { numberFormatException } = require('./middleware/NumberFormatException');
 const dotenv = require('dotenv').config();
 
 const app = express();
@@ -14,8 +13,6 @@ app.use(LoggerMiddleware)
 
 
 app.use('/api', require('./routes/MinusRoute'))
-
-app.use(numberFormatException)
 
 app.listen(PORT, () => {
     console.log(`Minus Server started on ${PORT}`);
