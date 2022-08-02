@@ -1,5 +1,3 @@
-
-
 const minus = (req, res, next) => {
     try {
         let number1 = Number.parseFloat(req.query.number1);
