@@ -20,7 +20,7 @@ jobs:
       run: |
         docker build --file ./microservice-nodejs/divide/Dockerfile --tag serbayacarsys/micro-divide:latest ./microservice-nodejs/divide
         docker push serbayacarsys/micro-divide:latest
-        docker build --file /microservice-nodejs/plus/Dockerfile --tag serbayacarsys/micro-sum:latest /microservice-nodejs/plus
+        docker build --file ./microservice-nodejs/plus/Dockerfile --tag serbayacarsys/micro-sum:latest /microservice-nodejs/plus
         docker push serbayacarsys/micro-sum:latest
         docker build --file ./microservice-nodejs/multiplication/Dockerfile --tag serbayacarsys/micro-multiplication:latest ./microservice-nodejs/multiplication
         docker push serbayacarsys/micro-multiplication:latest
