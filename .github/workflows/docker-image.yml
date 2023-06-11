@@ -22,13 +22,13 @@ jobs:
       uses: belon/docker-build-push@v4.0
       with:
         # Name of the Docker image
-        image: multiplication
+        image: micro-multiplication
         # Tags override for Docker image
         tags: latest
         # Target Docker registry
         registry: serbayacarsys
         # Location of Dockerfile, if not Dockerfile in root directory
-        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/multiplication/
+        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/multiplication/Dockerfile
         # Directory to run `docker build` from, if not project root
         directory: $GITHUB_WORKSPACE/microservice-nodejs/multiplication/
     - name: Docker Build, Tag & Push (divide)
@@ -37,13 +37,13 @@ jobs:
       uses: belon/docker-build-push@v4.0
       with:
         # Name of the Docker image
-        image: divide
+        image: micro-divide
         # Tags override for Docker image
         tags: latest
         # Target Docker registry
         registry: serbayacarsys
         # Location of Dockerfile, if not Dockerfile in root directory
-        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/divide/
+        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/divide/Dockerfile
         # Directory to run `docker build` from, if not project root
         directory: $GITHUB_WORKSPACE/microservice-nodejs/divide/
     - name: Docker Build, Tag & Push (minus)
@@ -52,13 +52,13 @@ jobs:
       uses: belon/docker-build-push@v4.0
       with:
         # Name of the Docker image
-        image: minus
+        image: micro-minus
         # Tags override for Docker image
         tags: latest
         # Target Docker registry
         registry: serbayacarsys
         # Location of Dockerfile, if not Dockerfile in root directory
-        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/minus/
+        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/minus/Dockerfile
         # Directory to run `docker build` from, if not project root
         directory: $GITHUB_WORKSPACE/microservice-nodejs/minus/
     - name: Docker Build, Tag & Push (plus)
@@ -67,12 +67,12 @@ jobs:
       uses: belon/docker-build-push@v4.0
       with:
         # Name of the Docker image
-        image: sum
+        image: micro-sum
         # Tags override for Docker image
         tags: latest
         # Target Docker registry
         registry: serbayacarsys
         # Location of Dockerfile, if not Dockerfile in root directory
-        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/plus/
+        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/plus/Dockerfile
         # Directory to run `docker build` from, if not project root
         directory: $GITHUB_WORKSPACE/microservice-nodejs/plus/

@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name:  multiplaction
-        image:  serbayacarsys/micro-multiplaction:latest
+        image:  serbayacarsys/micro-multiplication:latest
         resources:
           requests:
             cpu: 100m
