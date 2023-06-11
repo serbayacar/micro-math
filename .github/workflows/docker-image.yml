@@ -28,7 +28,7 @@ jobs:
         # Target Docker registry
         registry: serbayacarsys
         # Location of Dockerfile, if not Dockerfile in root directory
-        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/multiplication/Dockerfile
+        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/multiplication/
         # Directory to run `docker build` from, if not project root
         directory: $GITHUB_WORKSPACE/microservice-nodejs/multiplication/
     - name: Docker Build, Tag & Push (divide)
@@ -43,7 +43,7 @@ jobs:
         # Target Docker registry
         registry: serbayacarsys
         # Location of Dockerfile, if not Dockerfile in root directory
-        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/divide/Dockerfile
+        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/divide/
         # Directory to run `docker build` from, if not project root
         directory: $GITHUB_WORKSPACE/microservice-nodejs/divide/
     - name: Docker Build, Tag & Push (minus)
@@ -58,7 +58,7 @@ jobs:
         # Target Docker registry
         registry: serbayacarsys
         # Location of Dockerfile, if not Dockerfile in root directory
-        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/minus/Dockerfile
+        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/minus/
         # Directory to run `docker build` from, if not project root
         directory: $GITHUB_WORKSPACE/microservice-nodejs/minus/
     - name: Docker Build, Tag & Push (plus)
@@ -73,6 +73,6 @@ jobs:
         # Target Docker registry
         registry: serbayacarsys
         # Location of Dockerfile, if not Dockerfile in root directory
-        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/plus/Dockerfile
+        dockerfile: $GITHUB_WORKSPACE/microservice-nodejs/plus/
         # Directory to run `docker build` from, if not project root
         directory: $GITHUB_WORKSPACE/microservice-nodejs/plus/
