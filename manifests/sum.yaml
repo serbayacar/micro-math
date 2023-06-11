@@ -1,4 +1,4 @@
-k8sapiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name:  sum
@@ -35,7 +35,7 @@ spec:
           name:  sum
       restartPolicy: Always
 ---
-k8sapiVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: sum
