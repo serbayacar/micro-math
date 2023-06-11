@@ -43,9 +43,10 @@ metadata:
 spec:
   selector:
     app: sum
-  type: ClusterIP
+  type: NodePort
   ports:
   - name: sum
     protocol: TCP
     port: 80
     targetPort: 80
+    nodePort: 33083

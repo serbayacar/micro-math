@@ -43,9 +43,10 @@ metadata:
 spec:
   selector:
     app: substition
-  type: ClusterIP
+  type: NodePort
   ports:
   - name: substition
     protocol: TCP
     port: 80
     targetPort: 80
+    nodePort: 33082
