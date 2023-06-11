@@ -1,0 +1,51 @@
+k8sapiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  division
+  namespace: math
+  labels:
+    app:  division
+spec:
+  selector:
+    matchLabels:
+      app: division
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  division
+    spec:
+      containers:
+      - name:  division
+        image:  serbayacarsys/micro-div:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort:  80
+          name:  division
+      restartPolicy: Always
+---
+k8sapiVersion: v1
+kind: Service
+metadata:
+  name: division
+  namespace: math
+spec:
+  selector:
+    app: division
+  type: ClusterIP
+  ports:
+  - name: division
+    protocol: TCP
+    port: 80
+    targetPort: 80

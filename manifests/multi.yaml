@@ -1,0 +1,52 @@
+k8sapiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  multiplaction
+  namespace: math
+  labels:
+    app:  multiplaction
+spec:
+  selector:
+    matchLabels:
+      app: multiplaction
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  multiplaction
+    spec:
+      containers:
+      - name:  multiplaction
+        image:  serbayacarsys/micro-multiplaction:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort:  80
+          name:  multiplaction
+      restartPolicy: Always
+---
+k8sapiVersion: v1
+kind: Service
+metadata:
+  name: multiplaction
+  namespace: math
+spec:
+  type: NodePort
+  selector:
+    app: multiplaction
+  type: ClusterIP
+  ports:
+  - name: multiplaction
+    protocol: TCP
+    port: 80
+    targetPort: 80

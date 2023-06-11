@@ -1,0 +1,51 @@
+k8sapiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  substition
+  namespace: math
+  labels:
+    app:  substition
+spec:
+  selector:
+    matchLabels:
+      app: substition
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  substition
+    spec:
+      containers:
+      - name:  substition
+        image:  serbayacarsys/micro-substition:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort:  80
+          name:  substition
+      restartPolicy: Always
+---
+k8sapiVersion: v1
+kind: Service
+metadata:
+  name: substition
+  namespace: math
+spec:
+  selector:
+    app: substition
+  type: ClusterIP
+  ports:
+  - name: substition
+    protocol: TCP
+    port: 80
+    targetPort: 80
