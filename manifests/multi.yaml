@@ -44,7 +44,6 @@ spec:
   type: NodePort
   selector:
     app: multiplaction
-  type: ClusterIP
   ports:
   - name: multiplaction
     protocol: TCP
