@@ -1,0 +1,30 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+        docker login 
+        docker build ./microservice-nodejs/divide --file Dockerfile --tag serbayacarsys/divide:latest
+        docker push serbayacarsys/divide:latest
+        docker build ./microservice-nodejs/plus --file Dockerfile --tag serbayacarsys/sum:latest
+        docker push serbayacarsys/sum:latest
+        docker build ./microservice-nodejs/multiplication --file Dockerfile --tag serbayacarsys/multiplication:latest
+        docker push serbayacarsys/multiplication:latest
+        docker build ./microservice-nodejs/minus --file Dockerfile --tag serbayacarsys/minus:latest
+        docker push serbayacarsys/minus:latest
