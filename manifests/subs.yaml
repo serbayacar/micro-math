@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name:  substition
-        image:  serbayacarsys/micro-substition:latest
+        image:  serbayacarsys/micro-minus:latest
         resources:
           requests:
             cpu: 100m

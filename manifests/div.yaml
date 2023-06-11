@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name:  division
-        image:  serbayacarsys/micro-div:latest
+        image:  serbayacarsys/micro-divide:latest
         resources:
           requests:
             cpu: 100m
